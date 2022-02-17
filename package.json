@@ -1,0 +1,24 @@
+{
+  "name": "backendcrudcafe",
+  "version": "1.0.0",
+  "description": "backend del proyecto crud cafe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "backend",
+    "paso",
+    "a",
+    "paso",
+    "practica",
+    "de",
+    "rutas"
+  ],
+  "author": "Romero Pablo",
+  "license": "ISC"
+}
