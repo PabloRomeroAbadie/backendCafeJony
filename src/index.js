@@ -26,11 +26,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static(path.join(__dirname,"../public")));
 
 
-
-
-
-
-
 // ruta de prueba
 app.get("/products", (req, res)=>{
     // lo que quiero que pase cuando se ejecute esta consulta 
