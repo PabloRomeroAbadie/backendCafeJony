@@ -2,9 +2,19 @@ import Producto from "../models/producto";
 const productoCtrl = {};
 
 // agregamos la logica para obtener la lista de productos
-productoCtrl.listarProductos = (req,res)=>{
+productoCtrl.listarProductos = async (req,res)=>{
     //toda la logica que quiero que suceda para obtener la lista
-    res.send("hola desde el backend")
+    try{
+        //crear un arreglo de productos y enviarlo
+        const listaProductos = await Producto.find();
+        res.status(200).json(listaProductos)
+    }catch(error){
+        console.log(error)
+        //enviar codigo de error 
+        res.status(404).json({
+            mensaje: "Error al intentar listar los productos"
+        })
+    }
 }
 
 productoCtrl.crearProducto = async (req, res)=>{
