@@ -5,8 +5,14 @@ import productoCtrl from "../controllers/productos.controllers";
 const router = Router();
 
 // crear la ruta
-router.route("/products").get(productoCtrl.listarProductos).post(productoCtrl.crearProducto);
+router
+  .route("/products")
+  .get(productoCtrl.listarProductos)
+  .post(productoCtrl.crearProducto);
 
-router.route("/products/:id").get(productoCtrl.obtenerProducto)
+router
+  .route("/products/:id")
+  .get(productoCtrl.obtenerProducto)
+  .put(productoCtrl.editarProducto);
 
-export default router; 
+export default router;
