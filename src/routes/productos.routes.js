@@ -13,6 +13,7 @@ router
 router
   .route("/products/:id")
   .get(productoCtrl.obtenerProducto)
-  .put(productoCtrl.editarProducto);
+  .put(productoCtrl.editarProducto)
+  .delete(productoCtrl.borrarProducto);
 
 export default router;
