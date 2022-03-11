@@ -1,3 +1,4 @@
+import { json } from "express/lib/response";
 import Producto from "../models/producto";
 const productoCtrl = {};
 
@@ -39,6 +40,23 @@ productoCtrl.crearProducto = async (req, res)=>{
         //enviar codigo de error 
         res.status(404).json({
             mensaje: "Error al intentar agregar un producto"
+        })
+    }
+}
+
+productoCtrl.obtenerProducto = async(req,res)=>{
+    try {
+    //obtener el id del request 
+    console.log(req.params.id)
+    //buscar el producto
+    const productoBuscado = await Producto.findById(req.params.id)
+    //enviar el producto por respuesta para el frontend
+    res.status(200).json(productoBuscado)
+    } catch (error) {
+        console.log(error)
+        //enviar codigo de error 
+        res.status(404).json({
+            mensaje: "Error no se pudo obtener el producto"
         })
     }
 }
